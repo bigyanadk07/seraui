@@ -49,7 +49,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <ModeToggle />
           <Button variant="ghost" size="icon" asChild className="hidden md:flex">
-            <Link href="https://github.com/yourusername/seraui" target="_blank" rel="noopener noreferrer">
+            <Link href="https://github.com/bigyanadk07/seraui" target="_blank" rel="noopener noreferrer">
               <GitHubIcon className="h-5 w-5" />
               <span className="sr-only">GitHub</span>
             </Link>

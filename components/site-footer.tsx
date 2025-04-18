@@ -20,15 +20,15 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="flex gap-4">
-          <Link href="https://github.com/yourusername/seraui" target="_blank" rel="noopener noreferrer">
+          <Link href="https://github.com/bigyanadk07/seraui" target="_blank" rel="noopener noreferrer">
             <GitHubIcon className="h-5 w-5" />
             <span className="sr-only">GitHub</span>
           </Link>
-          <Link href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
+          <Link href="https://x.com/SeraUICorp" target="_blank" rel="noopener noreferrer">
             <TwitterIcon className="h-5 w-5" />
             <span className="sr-only">Twitter</span>
           </Link>
-          <Link href="https://discord.gg/yourinvite" target="_blank" rel="noopener noreferrer">
+          <Link href="https://discord.gg/W69YNvRH" target="_blank" rel="noopener noreferrer">
             <DiscordIcon className="h-5 w-5" />
             <span className="sr-only">Discord</span>
           </Link>
