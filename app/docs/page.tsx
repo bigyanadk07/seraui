@@ -283,7 +283,7 @@ export default function DocsPage() {
                   </p>
                   <Button variant="outline" size="sm" asChild>
                     <Link
-                      href="https://github.com/yourusername/seraui/issues"
+                      href="https://github.com/bigyanadk07/seraui/issues"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="gap-1"
@@ -301,7 +301,7 @@ export default function DocsPage() {
                   </p>
                   <Button variant="outline" size="sm" asChild>
                     <Link
-                      href="https://github.com/yourusername/seraui/pulls"
+                      href="https://github.com/bigyanadk07/seraui/pulls"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="gap-1"
@@ -323,7 +323,7 @@ export default function DocsPage() {
                 </p>
                 <Button asChild>
                   <Link
-                    href="https://github.com/yourusername/seraui"
+                    href="https://github.com/bigyanadk07/seraui"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="gap-2"

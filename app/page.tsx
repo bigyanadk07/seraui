@@ -46,10 +46,10 @@ export default function Home() {
                 </Button>
               </div>
               <div className="flex items-center gap-4 text-sm text-muted-foreground mt-4">
-                <div className="flex items-center gap-1">
+                {/* <div className="flex items-center gap-1">
                   <Star className="h-4 w-4 fill-primary text-primary" />
                   <span>1.2k+ Stars</span>
-                </div>
+                </div> */}
                 <div className="flex items-center gap-1">
                   <Eye className="h-4 w-4" />
                   <span>Used by 5k+ devs</span>
