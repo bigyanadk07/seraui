@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+
+    /* Sidebar specific variables */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+
+    /* Sidebar specific variables for dark mode */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 240 5.9% 10%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Teracotta and Teal Theme */
+  .teracotta-teal {
+    --background: 20 30% 96%;
+    --foreground: 180 50% 20%;
+    --card: 20 30% 98%;
+    --card-foreground: 180 50% 20%;
+    --popover: 20 30% 98%;
+    --popover-foreground: 180 50% 20%;
+    --primary: 20 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 180 60% 90%;
+    --secondary-foreground: 180 50% 20%;
+    --muted: 20 20% 90%;
+    --muted-foreground: 20 40% 40%;
+    --accent: 180 60% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 20 30% 85%;
+    --input: 20 30% 85%;
+    --ring: 20 80% 50%;
+
+    /* Sidebar specific variables */
+    --sidebar-background: 20 30% 94%;
+    --sidebar-foreground: 180 50% 20%;
+    --sidebar-primary: 20 80% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 180 60% 90%;
+    --sidebar-accent-foreground: 180 50% 20%;
+    --sidebar-border: 20 30% 85%;
+    --sidebar-ring: 20 80% 50%;
+  }
+
+  /* Cream and Black Theme */
+  .cream-black {
+    --background: 40 30% 96%;
+    --foreground: 0 0% 10%;
+    --card: 40 30% 98%;
+    --card-foreground: 0 0% 10%;
+    --popover: 40 30% 98%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 0 0% 10%;
+    --primary-foreground: 40 30% 96%;
+    --secondary: 40 20% 92%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 40 20% 90%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 0% 20%;
+    --accent-foreground: 40 30% 96%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 40 30% 85%;
+    --input: 40 30% 85%;
+    --ring: 0 0% 10%;
+
+    /* Sidebar specific variables */
+    --sidebar-background: 40 30% 94%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 0 0% 10%;
+    --sidebar-primary-foreground: 40 30% 96%;
+    --sidebar-accent: 40 20% 92%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 40 30% 85%;
+    --sidebar-ring: 0 0% 10%;
+  }
+
+  /* Blue and Mint Theme */
+  .blue-mint {
+    --background: 210 50% 98%;
+    --foreground: 210 80% 20%;
+    --card: 210 50% 99%;
+    --card-foreground: 210 80% 20%;
+    --popover: 210 50% 99%;
+    --popover-foreground: 210 80% 20%;
+    --primary: 210 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 50% 90%;
+    --secondary-foreground: 160 80% 20%;
+    --muted: 210 40% 90%;
+    --muted-foreground: 210 40% 40%;
+    --accent: 160 70% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 50% 90%;
+    --input: 210 50% 90%;
+    --ring: 210 80% 50%;
+
+    /* Sidebar specific variables */
+    --sidebar-background: 210 50% 96%;
+    --sidebar-foreground: 210 80% 20%;
+    --sidebar-primary: 210 80% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 160 50% 90%;
+    --sidebar-accent-foreground: 160 80% 20%;
+    --sidebar-border: 210 50% 90%;
+    --sidebar-ring: 210 80% 50%;
+  }
+
+  /* Beige and Dark Grey Theme */
+  .beige-darkgrey {
+    --background: 30 20% 96%;
+    --foreground: 0 0% 20%;
+    --card: 30 20% 98%;
+    --card-foreground: 0 0% 20%;
+    --popover: 30 20% 98%;
+    --popover-foreground: 0 0% 20%;
+    --primary: 0 0% 20%;
+    --primary-foreground: 30 20% 96%;
+    --secondary: 30 10% 90%;
+    --secondary-foreground: 0 0% 20%;
+    --muted: 30 10% 90%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 0% 30%;
+    --accent-foreground: 30 20% 96%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 20% 85%;
+    --input: 30 20% 85%;
+    --ring: 0 0% 20%;
+
+    /* Sidebar specific variables */
+    --sidebar-background: 30 20% 94%;
+    --sidebar-foreground: 0 0% 20%;
+    --sidebar-primary: 0 0% 20%;
+    --sidebar-primary-foreground: 30 20% 96%;
+    --sidebar-accent: 30 10% 90%;
+    --sidebar-accent-foreground: 0 0% 20%;
+    --sidebar-border: 30 20% 85%;
+    --sidebar-ring: 0 0% 20%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Component preview styles */
+.preview-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Make sure buttons in previews have proper spacing */
+.preview-container button {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Ensure inputs in previews have proper width */
+.preview-container input {
+  max-width: 100%;
+}
+
+/* Add some spacing for component groups */
+.preview-container > div {
+  margin-bottom: 1rem;
+}
+
+/* Make sure the preview container doesn't overflow */
+.preview-container {
+  overflow-x: auto;
+}
