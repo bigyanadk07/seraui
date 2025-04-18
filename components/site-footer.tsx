@@ -10,7 +10,7 @@ export function SiteFooter() {
             <p>Built by <span className="font-semibold">Bigyan Adhikari</span>.</p> 
             <p>The source code is available on{" "}</p>
             <Link
-              href="https://github.com/yourusername/seraui"
+              href="https://github.com/bigyanadk07/seraui"
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
