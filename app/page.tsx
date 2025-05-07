@@ -155,14 +155,14 @@ export default function Home() {
             </p>
           </div>
           <ComponentGrid limit={8} showViewAll={true} />
-          <div className="flex justify-center mt-12">
+          {/* <div className="flex justify-center mt-12">
             <Button asChild size="lg" variant="outline" className="rounded-md">
               <Link href="/components" className="gap-2">
                 View All Components
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
-          </div>
+          </div> */}
         </div>
       </section>
 

@@ -3,31 +3,13 @@
 @tailwind utilities;
 
 body {
-  font-family: 'Donatto', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-}
-
-@font-face{
-  font-family: 'Brother';
-  src: url('../../public//fonts/brother.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face{
-  font-family: 'Donatto';
-  src: url('@/../../public/fonts/donatto-regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-.brother-font{
-  font-family: 'Brother', sans-serif;
 }
 
 @layer base {

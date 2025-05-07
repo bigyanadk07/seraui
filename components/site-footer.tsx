@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
           <div className="text-center text-sm leading-loose text-muted-foreground md:text-left flex gap-2">
             <p>Built by <span className="font-semibold">Bigyan Adhikari</span>.</p> 
-            <p>The source code is available on{" "}</p>
+            {/* <p>The source code is available on{" "}</p>
             <Link
               href="https://github.com/bigyanadk07/seraui"
               target="_blank"
@@ -16,14 +16,14 @@ export function SiteFooter() {
               className="font-medium underline underline-offset-4"
             >
               GitHub
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className="flex gap-4">
-          <Link href="https://github.com/bigyanadk07/seraui" target="_blank" rel="noopener noreferrer">
+          {/* <Link href="https://github.com/bigyanadk07/seraui" target="_blank" rel="noopener noreferrer">
             <GitHubIcon className="h-5 w-5" />
             <span className="sr-only">GitHub</span>
-          </Link>
+          </Link> */}
           <Link href="https://x.com/SeraUICorp" target="_blank" rel="noopener noreferrer">
             <TwitterIcon className="h-5 w-5" />
             <span className="sr-only">Twitter</span>

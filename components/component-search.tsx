@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { Search } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { categories } from "@/lib/component-data"
 
@@ -55,7 +55,6 @@ export function ComponentSearch() {
         </Button>
       </DialogTrigger>
       <DialogContent className="p-0">
-      <DialogTitle className="sr-only">Search Components</DialogTitle>
         <div className="flex items-center border-b px-3">
           <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
           <Input

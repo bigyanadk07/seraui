@@ -15,44 +15,30 @@ export function generateMetadata({ params }: CategoryPageProps): Metadata {
   // This would be replaced with actual data in a real app
   const categoryMap: Record<string, string> = {
     alerts: "Alerts",
-    announcements: "Announcements",
     badges: "Badges",
     banners: "Banners",
     "blog-cards": "Blog Cards",
     breadcrumbs: "Breadcrumbs",
     buttons: "Buttons",
-    "button-groups": "Button Groups",
     cards: "Cards",
     carts: "Carts",
     ctas: "Call to Actions",
-    checkboxes: "Checkboxes",
-    "details-lists": "Details Lists",
     dividers: "Dividers",
     dropdowns: "Dropdowns",
     faqs: "FAQs",
-    filters: "Filters",
+    forms: "Forms",
     footers: "Footers",
     grids: "Grids",
     headers: "Headers",
-    inputs: "Inputs",
     media: "Media",
     modals: "Modals",
-    navigation: "Navigation",
     pagination: "Pagination",
     pricing: "Pricing",
     "product-cards": "Product Cards",
-    "product-collections": "Product Collections",
-    "quantity-inputs": "Quantity Inputs",
-    "radio-groups": "Radio Groups",
-    sections: "Sections",
-    selects: "Selects",
     "side-menu": "Side Menu",
     stats: "Stats",
-    steps: "Steps",
     tables: "Tables",
-    textareas: "Textareas",
     toggles: "Toggles",
-    "vertical-menu": "Vertical Menu",
   }
 
   const category = categoryMap[params.category]
@@ -73,44 +59,30 @@ export default function CategoryPage({ params }: CategoryPageProps) {
   // This would be replaced with actual data in a real app
   const categoryMap: Record<string, string> = {
     alerts: "Alerts",
-    announcements: "Announcements",
     badges: "Badges",
     banners: "Banners",
     "blog-cards": "Blog Cards",
     breadcrumbs: "Breadcrumbs",
     buttons: "Buttons",
-    "button-groups": "Button Groups",
     cards: "Cards",
     carts: "Carts",
     ctas: "Call to Actions",
-    checkboxes: "Checkboxes",
-    "details-lists": "Details Lists",
     dividers: "Dividers",
     dropdowns: "Dropdowns",
     faqs: "FAQs",
-    filters: "Filters",
+    forms: "Forms",
     footers: "Footers",
     grids: "Grids",
     headers: "Headers",
-    inputs: "Inputs",
     media: "Media",
     modals: "Modals",
-    navigation: "Navigation",
     pagination: "Pagination",
     pricing: "Pricing",
     "product-cards": "Product Cards",
-    "product-collections": "Product Collections",
-    "quantity-inputs": "Quantity Inputs",
-    "radio-groups": "Radio Groups",
-    sections: "Sections",
-    selects: "Selects",
     "side-menu": "Side Menu",
     stats: "Stats",
-    steps: "Steps",
     tables: "Tables",
-    textareas: "Textareas",
     toggles: "Toggles",
-    "vertical-menu": "Vertical Menu",
   }
 
   const category = categoryMap[params.category]
@@ -174,63 +146,156 @@ function getComponentsByCategory(category: string) {
           id: "alert-1",
           title: "Simple Alert",
           description: "A simple alert component with different variants",
-          code: `<div class="p-4 mb-4 text-sm rounded-lg bg-blue-50 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300" role="alert">
-  <span class="font-medium">Info alert!</span> This is an informational message.
+          code: `
+<div class="flex justify-center">
+<div role="alert" class="rounded-md border border-gray-300 bg-white p-4 shadow-sm">
+<div class="flex items-start gap-4">
+<svg
+xmlns="http://www.w3.org/2000/svg"
+fill="none"
+viewBox="0 0 24 24"
+strokeWidth="1.5"
+stroke="currentColor"
+class="size-6 text-green-600"
+>
+<path
+strokeLinecap="round"
+strokeLinejoin="round"
+d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+/>
+</svg>
+
+<div class="flex-1">
+<strong class="font-medium text-gray-900"> Changes saved </strong>
+
+<p class="mt-0.5 text-sm text-gray-700">Your product changes have been saved.</p>
 </div>
 
-<div class="p-4 mb-4 text-sm rounded-lg bg-red-50 text-red-800 dark:bg-red-900/50 dark:text-red-300" role="alert">
-  <span class="font-medium">Danger alert!</span> This action cannot be undone.
-</div>
+<button
+class="-m-3 rounded-full p-1.5 text-gray-500 transition-colors hover:bg-gray-50 hover:text-gray-700"
+type="button"
+aria-label="Dismiss alert"
+>
+<span class="sr-only">Dismiss popup</span>
 
-<div class="p-4 mb-4 text-sm rounded-lg bg-green-50 text-green-800 dark:bg-green-900/50 dark:text-green-300" role="alert">
-  <span class="font-medium">Success alert!</span> Your changes have been saved.
+<svg
+xmlns="http://www.w3.org/2000/svg"
+fill="none"
+viewBox="0 0 24 24"
+strokeWidth="1.5"
+stroke="currentColor"
+class="size-5"
+>
+<path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+</svg>
+</button>
 </div>
-
-<div class="p-4 text-sm rounded-lg bg-yellow-50 text-yellow-800 dark:bg-yellow-900/50 dark:text-yellow-300" role="alert">
-  <span class="font-medium">Warning alert!</span> Please review your information before continuing.
-</div>`,
+</div>
+            </div>
+          `,
         },
         {
           id: "alert-2",
-          title: "Alert with Icon",
-          description: "Alert components with icons for better visual cues",
-          code: `<div class="flex p-4 mb-4 text-sm rounded-lg bg-blue-50 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300" role="alert">
-  <svg class="flex-shrink-0 w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd"></path>
-  </svg>
-  <div>
-    <span class="font-medium">Info alert!</span> This is an informational message with an icon.
-  </div>
+          title: "Warning Alert",
+          description: "A simple alert component with different variants",
+          code: `
+<div class="flex justify-center mb-6">
+<div role="alert" class="rounded-md border border-blue-100 bg-blue-50 p-4 w-full max-w-md">
+<div class="flex items-start gap-4">
+<svg
+xmlns="http://www.w3.org/2000/svg"
+fill="none"
+viewBox="0 0 24 24"
+strokeWidth="1.5"
+stroke="currentColor"
+class="size-6 text-blue-600"
+>
+<path
+strokeLinecap="round"
+strokeLinejoin="round"
+d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+/>
+</svg>
+
+<div class="flex-1">
+<strong class="font-medium text-blue-800">Information</strong>
+
+<p class="mt-1 text-sm text-blue-700">
+Scheduled maintenance will occur on June 15th from 2-4am.
+</p>
 </div>
 
-<div class="flex p-4 mb-4 text-sm rounded-lg bg-red-50 text-red-800 dark:bg-red-900/50 dark:text-red-300" role="alert">
-  <svg class="flex-shrink-0 w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd"></path>
-  </svg>
-  <div>
-    <span class="font-medium">Danger alert!</span> This action cannot be undone.
-  </div>
-</div>`,
+<button
+class="-m-3 rounded-full p-1.5 text-blue-500 transition-colors hover:bg-blue-100"
+type="button"
+aria-label="Dismiss alert"
+>
+<span class="sr-only">Dismiss</span>
+<svg
+xmlns="http://www.w3.org/2000/svg"
+fill="none"
+viewBox="0 0 24 24"
+strokeWidth="1.5"
+stroke="currentColor"
+class="size-5"
+>
+<path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+</svg>
+</button>
+</div>
+</div>
+</div>
+
+          `,
         },
         {
           id: "alert-3",
-          title: "Dismissible Alert",
-          description: "Alert with a dismiss button that can be closed",
-          code: `<div id="dismissible-alert" class="flex items-center p-4 mb-4 rounded-lg bg-green-50 text-green-800 dark:bg-green-900/50 dark:text-green-300" role="alert">
-  <svg class="flex-shrink-0 w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd"></path>
-  </svg>
-  <span class="sr-only">Info</span>
-  <div class="ml-2 text-sm font-medium">
-    Success! Your changes have been saved.
-  </div>
-  <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex h-8 w-8 dark:bg-green-900/50 dark:text-green-300 dark:hover:bg-green-800" data-dismiss-target="#dismissible-alert" aria-label="Close" onclick="this.parentElement.remove()">
-    <span class="sr-only">Close</span>
-    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-      <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path>
-    </svg>
+          title: "Notification Alert with Action Button",
+          description: "A simple alert component with different variants",
+          code: `
+<div class="flex justify-center mb-6">
+<div role="alert" class="rounded-md bg-gray-800 p-4 text-white w-full max-w-md">
+<div class="flex items-start gap-4">
+<svg
+xmlns="http://www.w3.org/2000/svg"
+fill="none"
+viewBox="0 0 24 24"
+strokeWidth="1.5"
+stroke="currentColor"
+class="size-6 text-gray-300"
+>
+<path
+  strokeLinecap="round"
+  strokeLinejoin="round"
+  d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+/>
+</svg>
+
+<div class="flex-1">
+<strong class="block font-medium">New Notification</strong>
+
+<p class="mt-1 text-sm text-gray-300">
+  You have a new message from Alex. Would you like to view it now?
+</p>
+
+<div class="mt-4 flex gap-2">
+  <button
+    class="inline-block rounded bg-white px-4 py-2 text-xs font-medium text-gray-800 hover:bg-gray-200"
+  >
+    View Message
   </button>
-</div>`,
+
+  <button
+    class="inline-block rounded px-4 py-2 text-xs font-medium text-gray-300 hover:text-white"
+  >
+    Dismiss
+  </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+          `,
         },
       ]
       break
@@ -241,242 +306,492 @@ function getComponentsByCategory(category: string) {
           id: "badge-1",
           title: "Basic Badges",
           description: "Simple badge components in different colors",
-          code: `<span class="inline-block px-2 py-1 mr-2 text-xs font-semibold rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300">
-  Blue
+          code: `
+                      <div class="flex justify-center">
+                <span class="rounded-full bg-purple-100 px-2.5 py-0.5 text-sm whitespace-nowrap text-purple-700">
+  Live
 </span>
 
-<span class="inline-block px-2 py-1 mr-2 text-xs font-semibold rounded-full bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300">
-  Gray
+<span
+  class="rounded-full border border-purple-500 px-2.5 py-0.5 text-sm whitespace-nowrap text-purple-700"
+>
+  Live
 </span>
-
-<span class="inline-block px-2 py-1 mr-2 text-xs font-semibold rounded-full bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300">
-  Red
-</span>
-
-<span class="inline-block px-2 py-1 mr-2 text-xs font-semibold rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
-  Green
-</span>
-
-<span class="inline-block px-2 py-1 mr-2 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300">
-  Yellow
-</span>
-
-<span class="inline-block px-2 py-1 mr-2 text-xs font-semibold rounded-full bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300">
-  Indigo
-</span>
-
-<span class="inline-block px-2 py-1 mr-2 text-xs font-semibold rounded-full bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300">
-  Purple
-</span>
-
-<span class="inline-block px-2 py-1 text-xs font-semibold rounded-full bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-300">
-  Pink
-</span>`,
+            </div>
+          `,
         },
         {
           id: "badge-2",
-          title: "Badge Shapes",
-          description: "Badges with different shapes and styles",
-          code: `<span class="inline-block px-2 py-1 mr-2 mb-2 text-xs font-semibold rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300">
-  Rounded Full
+          title: "Basic Badges",  
+          description: "Simple badge components in different colors",
+          code: `
+<div className="flex justify-center">     
+<span class="inline-flex items-center justify-center gap-1 rounded-full bg-red-100 px-2.5 py-0.5 text-red-700">
+<svg
+xmlns="http://www.w3.org/2000/svg"
+fill="none"
+viewBox="0 0 24 24"
+stroke-width="1.5"
+stroke="currentColor"
+class="size-3"
+>
+<path
+stroke-linecap="round"
+stroke-linejoin="round"
+d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126z"
+/>
+</svg>
+<p class="whitespace-nowrap text-sm">Alert</p>
 </span>
-
-<span class="inline-block px-2 py-1 mr-2 mb-2 text-xs font-semibold rounded bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300">
-  Rounded
-</span>
-
-<span class="inline-block px-2 py-1 mr-2 mb-2 text-xs font-semibold rounded-none bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300">
-  Square
-</span>
-
-<span class="inline-block px-2 py-1 mr-2 mb-2 text-xs font-semibold rounded-lg bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300">
-  Rounded Large
-</span>
-
-<span class="inline-block px-2 py-1 mr-2 mb-2 text-xs font-semibold rounded-full border border-blue-500 text-blue-500 bg-transparent dark:border-blue-400 dark:text-blue-400">
-  Outlined
-</span>`,
+</div>
+</div>
+`,
         },
         {
           id: "badge-3",
-          title: "Badges with Icons",
-          description: "Badges with icons for enhanced visual information",
-          code: `<span class="inline-flex items-center px-2 py-1 mr-2 text-xs font-semibold rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">
-  <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
-  </svg>
-  Completed
-</span>
+          title: "Badge with Icon",
+          description: "Simple badge components in different colors",
+          code: `
+<div className="flex justify-center">
+<span class="inline-flex items-center justify-center gap-1 rounded-full bg-green-100 px-2.5 py-0.5 text-green-700">
+<svg
+xmlns="http://www.w3.org/2000/svg"
+fill="none"
+viewBox="0 0 24 24"
+stroke-width="1.5"
+stroke="currentColor"
+class="size-3"
+>
+<path
+stroke-linecap="round"
+stroke-linejoin="round"
+d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+/>
+</svg>
 
-<span class="inline-flex items-center px-2 py-1 mr-2 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300">
-  <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"></path>
-  </svg>
-  Pending
+<p class="whitespace-nowrap text-sm">Verified</p>
 </span>
+</div>
+          `,
+        },
+      ]
+      break
 
-<span class="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300">
-  <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-    <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path>
-  </svg>
-  Rejected
-</span>`,
+    case "banners":
+      components = [
+        {
+          id: "banner-1",
+          title: "Simple Banner",
+          description: "A banner component for displaying important information",
+          code: `
+                      <div class="flex justify-center">
+              
+            </div>
+          `,
+        },
+      ]
+      break
+
+    case "blog-cards":
+      components = [
+        {
+          id: "blog-card-1",
+          title: "Blog Card",
+          description: "Card layout for blog posts preview",
+          code: `<div class="flex justify-center items-center w-full">
+  <article class="w-fit max-w-sm overflow-hidden rounded-lg shadow-sm transition hover:shadow-lg">
+  <img
+    alt=""
+    src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+    className="h-56 w-full object-cover"
+  />
+
+    <div class="bg-white p-4 sm:p-6">
+      <time datetime="2022-10-10" class="block text-xs text-gray-500">
+        10th Oct 2022
+      </time>
+
+      <a href="#">
+        <h3 class="mt-0.5 text-lg text-gray-900">How to position your furniture for positivity</h3>
+      </a>
+
+      <p class="mt-2 line-clamp-3 text-sm text-gray-500">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus
+        pariatur animi temporibus nesciunt praesentium dolore sed nulla ipsum eveniet corporis
+        quidem.
+      </p>
+    </div>
+  </article>
+</div>`,
+        },
+      ]
+      break
+
+    case "breadcrumbs":
+      components = [
+        {
+          id: "breadcrumb-1",
+          title: "Simple Breadcrumbs",
+          description: "Navigation breadcrumbs for page hierarchy",
+          code: `
+                      <div class="flex justify-center">
+              
+            </div>
+          `,
         },
       ]
       break
 
     case "buttons":
-    case "button-groups":
       components = [
         {
           id: "button-1",
-          title: "Basic Buttons",
-          description: "Simple button components in different styles",
-          code: `<button class="px-4 py-2 mr-2 mb-2 font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-blue-700 dark:hover:bg-blue-800">
-  Primary
-</button>
-
-<button class="px-4 py-2 mr-2 mb-2 font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:bg-gray-700">
-  Secondary
-</button>
-
-<button class="px-4 py-2 mr-2 mb-2 font-medium text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:bg-red-700 dark:hover:bg-red-800">
-  Danger
-</button>
-
-<button class="px-4 py-2 mr-2 mb-2 font-medium text-white bg-green-600 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:bg-green-700 dark:hover:bg-green-800">
-  Success
-</button>
-
-<button class="px-4 py-2 mr-2 mb-2 font-medium text-white bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 dark:bg-yellow-600 dark:hover:bg-yellow-700">
-  Warning
-</button>
-
-<button class="px-4 py-2 font-medium text-blue-600 bg-transparent rounded-md hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:text-blue-400 dark:hover:bg-gray-800">
-  Link
-</button>`,
+          title: "Hover Buttons",
+          description: "Buttons with Hover",
+          code: `
+<div class="flex justify-center">
+  <a
+    class="group inline-block rounded-full bg-gradient-to-r transition duration-300 from-pink-500 via-red-500 to-yellow-500  p-[2px] hover:text-white focus:ring-3 focus:outline-hidden"
+    href="#"
+  >
+    <span
+      class="block rounded-full bg-white px-8 py-3 text-sm font-medium group-hover:bg-transparent"
+    >
+      Download
+    </span>
+  </a>
+</div>
+`,
         },
         {
           id: "button-2",
-          title: "Button Sizes",
-          description: "Buttons in different sizes",
-          code: `<button class="px-2 py-1 mr-2 mb-2 text-xs font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-blue-700 dark:hover:bg-blue-800">
-  Extra Small
-</button>
-
-<button class="px-3 py-1.5 mr-2 mb-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-blue-700 dark:hover:bg-blue-800">
-  Small
-</button>
-
-<button class="px-4 py-2 mr-2 mb-2 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-blue-700 dark:hover:bg-blue-800">
-  Medium
-</button>
-
-<button class="px-5 py-2.5 mr-2 mb-2 text-lg font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-blue-700 dark:hover:bg-blue-800">
-  Large
-</button>
-
-<button class="px-6 py-3 text-xl font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:bg-blue-700 dark:hover:bg-blue-800">
-  Extra Large
-</button>`,
+          title: "Gold Button",
+          description: "Gold button with hover effect",
+          code: `
+<div class="flex justify-center">
+  <a
+    href="#"
+    class="group inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 p-[2px] hover:text-white focus:ring-3 focus:outline-none"
+  >
+    <span class="block rounded-full bg-white px-6 py-3 text-sm font-semibold group-hover:bg-transparent">
+      Explore More
+    </span>
+    <svg class="h-5 w-5 mr-2 text-cyan-700 group-hover:text-white transition-transform duration-300 group-hover:translate-x-1" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M12.293 3.293a1 1 0 011.414 0L18 7.586a1 1 0 010 1.414l-4.293 4.293a1 1 0 01-1.414-1.414L15.586 9H4a1 1 0 110-2h11.586l-3.293-3.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+    </svg>
+  </a>
+</div>`,
         },
         {
           id: "button-3",
-          title: "Button Group",
-          description: "Group of buttons for related actions",
-          code: `<div class="inline-flex rounded-md shadow-sm mb-4" role="group">
-  <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700">
-    Profile
-  </button>
-  <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700">
-    Settings
-  </button>
-  <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700">
-    Messages
-  </button>
+          title: "Neon Glow Button",
+          description: "Neon button with glow effect",
+          code: `
+<div class="flex justify-center">
+<a
+  href="#"
+  class="group relative inline-block text-sm font-medium text-white"
+>
+  <span class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur opacity-70 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></span>
+  <span class="relative inline-block px-8 py-3 bg-black rounded-full border border-purple-500">
+    Glow Button
+  </span>
+</a>
 </div>
-
-<div class="inline-flex rounded-md shadow-sm" role="group">
-  <button type="button" class="px-4 py-2 text-sm font-medium text-white bg-blue-700 border border-blue-700 rounded-l-lg hover:bg-blue-800 focus:z-10 focus:ring-2 focus:ring-blue-700 dark:bg-blue-600 dark:border-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-    Edit
-  </button>
-  <button type="button" class="px-4 py-2 text-sm font-medium text-white bg-blue-700 border-t border-b border-blue-700 hover:bg-blue-800 focus:z-10 focus:ring-2 focus:ring-blue-700 dark:bg-blue-600 dark:border-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-    Duplicate
-  </button>
-  <button type="button" class="px-4 py-2 text-sm font-medium text-white bg-blue-700 border border-blue-700 rounded-r-lg hover:bg-blue-800 focus:z-10 focus:ring-2 focus:ring-blue-700 dark:bg-blue-600 dark:border-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-    Delete
-  </button>
-</div>`,
+`,
+        },
+        {
+          id: "button-4",
+          title: "Glassmorphism Button",
+          description: "Neon button with glow effect",
+          code: `
+<div class="flex justify-center">
+  <a
+    href="#"
+    class="group relative text-blue-600 font-semibold text-sm px-6 py-2 hover:text-blue-800"
+  >
+    Hover Me
+    <span class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+  </a>
+</div>
+`,
         },
       ]
       break
 
-    case "inputs":
+    case "cards":
       components = [
         {
-          id: "input-1",
-          title: "Basic Inputs",
-          description: "Simple input components for forms",
-          code: `<div class="mb-4">
-  <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Default Input</label>
-  <input type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Default input">
+          id: "card-1",
+          title: "Simple Card",
+          description: "Basic card component for content display",
+          code: `
+              <div class="flex justify-center px-4">
+  <a href="#" class="block w-full max-w-2xl rounded-md border border-gray-300 p-4 shadow-sm transition hover:shadow-md sm:p-6">
+    <div class="sm:flex sm:items-start sm:justify-between sm:gap-4">
+      <div class="sm:order-last sm:shrink-0">
+        <img
+          alt="Author"
+          src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1180&q=80"
+          class="size-16 rounded-full object-cover sm:size-[72px]"
+        />
+      </div>
+
+      <div class="mt-4 sm:mt-0">
+        <h3 class="text-lg font-medium text-gray-900">
+          How I built my first website with Nuxt, Tailwind CSS and Vercel
+        </h3>
+        <p class="mt-1 text-sm text-gray-700">By John Doe</p>
+        <p class="mt-4 line-clamp-2 text-sm text-gray-700">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. At velit illum provident a, ipsa
+          maiores deleniti consectetur nobis et eaque.
+        </p>
+      </div>
+    </div>
+
+    <dl class="mt-6 flex gap-4 lg:gap-6">
+      <div>
+        <dt class="text-sm font-medium text-gray-700">Published on</dt>
+        <dd class="text-xs text-gray-700">31/06/2025</dd>
+      </div>
+      <div>
+        <dt class="text-sm font-medium text-gray-700">Reading time</dt>
+        <dd class="text-xs text-gray-700">12 minutes</dd>
+      </div>
+    </dl>
+  </a>
 </div>
 
-<div class="mb-4">
-  <label for="disabled-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Disabled Input</label>
-  <input type="text" id="disabled-input" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400" value="Disabled input" disabled>
-</div>
-
-<div class="mb-4">
-  <label for="success-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Success Input</label>
-  <input type="text" id="success-input" class="bg-green-50 border border-green-500 text-green-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-green-500 dark:placeholder-gray-400 dark:text-white" placeholder="Success input">
-  <p class="mt-2 text-sm text-green-600 dark:text-green-500">This input is valid!</p>
-</div>
-
-<div>
-  <label for="error-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Error Input</label>
-  <input type="text" id="error-input" class="bg-red-50 border border-red-500 text-red-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-700 dark:border-red-500 dark:placeholder-gray-400 dark:text-white" placeholder="Error input">
-  <p class="mt-2 text-sm text-red-600 dark:text-red-500">This input has an error!</p>
-</div>`,
+          `,
         },
+      ]
+      break
+
+    case "carts":
+      components = [
         {
-          id: "input-2",
-          title: "Input with Icon",
-          description: "Input fields with icons for enhanced user experience",
-          code: `<div class="relative mb-4">
-  <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-    <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-    </svg>
+          id: "cart-1",
+          title: "Shopping Cart",
+          description: "Shopping cart component for e-commerce",
+          code: `
+<div class="flex justify-center p-6">
+  <div class="w-full max-w-2xl rounded-lg bg-white shadow-md p-6">
+    <h2 class="text-2xl font-bold mb-6 text-gray-800">Your Cart</h2>
+
+    <!-- Cart Item -->
+    <div class="flex items-center justify-between border-b py-4">
+      <div class="flex items-center gap-4">
+        <img
+          src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=100&q=80"
+          alt="Product"
+          class="h-16 w-16 rounded object-cover"
+        />
+        <div>
+          <h4 class="text-lg font-medium text-gray-800">Wireless Headphones</h4>
+          <p class="text-sm text-gray-500">Qty: 1</p>
+        </div>
+      </div>
+      <span class="text-gray-800 font-semibold">$89.99</span>
+    </div>
+
+    <!-- Repeatable Item -->
+    <div class="flex items-center justify-between border-b py-4">
+      <div class="flex items-center gap-4">
+        <img
+          src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=100&q=80"
+          alt="Product"
+          class="h-16 w-16 rounded object-cover"
+        />
+        <div>
+          <h4 class="text-lg font-medium text-gray-800">Smart Watch</h4>
+          <p class="text-sm text-gray-500">Qty: 2</p>
+        </div>
+      </div>
+      <span class="text-gray-800 font-semibold">$199.98</span>
+    </div>
+
+    <!-- Subtotal -->
+    <div class="mt-6 flex items-center justify-between">
+      <span class="text-lg font-semibold text-gray-700">Subtotal</span>
+      <span class="text-xl font-bold text-gray-900">$289.97</span>
+    </div>
+
+    <!-- Checkout Button -->
+    <div class="mt-6">
+      <button class="w-full rounded-md bg-indigo-600 px-6 py-3 text-white font-medium hover:bg-indigo-700 transition">
+        Proceed to Checkout
+      </button>
+    </div>
   </div>
-  <input type="email" id="email-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@example.com">
 </div>
 
-<div class="relative">
-  <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-    <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-      <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"></path>
-    </svg>
-  </div>
-  <input type="text" id="search-icon" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
-</div>`,
+          `,
         },
-        {
-          id: "input-3",
-          title: "Input with Label and Helper Text",
-          description: "Input fields with labels and helper text for better accessibility",
-          code: `<div class="mb-6">
-  <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
-  <input type="text" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="johndoe" required>
-  <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Your username must be 5-20 characters long and can contain letters and numbers.</p>
-</div>
+      ]
+      break
 
-<div>
-  <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-  <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-  <p id="helper-text-password" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Your password must be at least 8 characters long, contain uppercase and lowercase letters, numbers, and special characters.</p>
-</div>`,
+    case "ctas":
+      components = [
+        {
+          id: "cta-1",
+          title: "Call to Action",
+          description: "Component to encourage user action",
+          code: `
+                <section
+  class="overflow-hidden bg-[url(https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=2670&auto=format&fit=crop)] bg-cover bg-top bg-no-repeat"
+>
+  <div class="bg-black/50 p-8 md:p-12 lg:px-16 lg:py-24">
+    <div class="text-center ltr:sm:text-left rtl:sm:text-right">
+      <h2 class="text-2xl font-bold text-white sm:text-3xl md:text-5xl">Latest Shirts</h2>
+
+      <p class="hidden max-w-lg text-white/90 md:mt-6 md:block md:text-lg md:leading-relaxed">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore officia corporis quasi
+        doloribus iure architecto quae voluptatum beatae excepturi dolores.
+      </p>
+
+      <div class="mt-4 sm:mt-8">
+        <a
+          href="#"
+          class="inline-block rounded-full bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:ring-3 focus:ring-yellow-400 focus:outline-hidden"
+        >
+          Get Yours Today
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+          `,
+        },
+      ]
+      break
+
+    case "dividers":
+      components = [
+        {
+          id: "divider-1",
+          title: "Simple Divider",
+          description: "Divider component to separate content sections",
+          code: ``,
+        },
+      ]
+      break
+
+    case "dropdowns":
+      components = [
+        {
+          id: "dropdown-1",
+          title: "Simple Dropdown",
+          description: "Dropdown menu for navigation or options",
+          code: `
+                      <div class="flex justify-center">
+              
+            </div>
+          `,
+        },
+      ]
+      break
+
+    case "faqs":
+      components = [
+        {
+          id: "faq-1",
+          title: "FAQ Component",
+          description: "Frequently asked questions layout",
+          code: `
+                      <div class="flex justify-center">
+              
+            </div>
+          `,
+        },
+      ]
+      break
+
+    case "forms":
+      components = [
+        {
+          id: "form-1",
+          title: "Simple Form",
+          description: "Basic form components for data collection",
+          code: `
+                      <div class="flex justify-center">
+              
+            </div>
+          `,
+        },
+      ]
+      break
+
+    case "footers":
+      components = [
+        {
+          id: "footer-1",
+          title: "Site Footer",
+          description: "Footer component for website layout",
+          code: `
+                      <div class="flex justify-center">
+              
+            </div>
+          `,
+        },
+      ]
+      break
+
+    case "grids":
+      components = [
+        {
+          id: "grid-1",
+          title: "Basic Grid",
+          description: "Grid layout for content organization",
+          code: `
+                      <div class="flex justify-center">
+              
+            </div>
+          `,
+        },
+      ]
+      break
+
+    case "headers":
+      components = [
+        {
+          id: "header-1",
+          title: "Site Header",
+          description: "Header component for website layout",
+          code: `
+                      <div class="flex justify-center">
+              
+            </div>
+          `,
+        },
+      ]
+      break
+
+    case "media":
+      components = [
+        {
+          id: "media-1",
+          title: "Media Component",
+          description: "Component for displaying images and videos",
+          code: `
+                      <div class="flex justify-center">
+              
+            </div>
+          `,
+        },
+      ]
+      break
+
+    case "modals":
+      components = [
+        {
+          id: "modal-1",
+          title: "Simple Modal",
+          description: "Dialog component for focused interactions",
+          code: `
+                      <div class="flex justify-center">
+              
+            </div>
+          `,
         },
       ]
       break
@@ -487,65 +802,123 @@ function getComponentsByCategory(category: string) {
           id: "pagination-1",
           title: "Simple Pagination",
           description: "Basic pagination component with page numbers",
-          code: `<nav aria-label="Page navigation example">
-  <ul class="inline-flex -space-x-px text-sm">
-    <li>
-      <a href="#" class="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
-    </li>
-    <li>
-      <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-    </li>
-    <li>
-      <a href="#" aria-current="page" class="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">2</a>
-    </li>
-    <li>
-      <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">3</a>
-    </li>
-    <li>
-      <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
-    </li>
-    <li>
-      <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
-    </li>
-    <li>
-      <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
-    </li>
-  </ul>
-</nav>`,
+          code: `
+                      <div class="flex justify-center">
+              
+            </div>
+          `,
         },
+      ]
+      break
+
+    case "pricing":
+      components = [
         {
-          id: "pagination-2",
-          title: "Pagination with Icons",
-          description: "Pagination with previous and next icons",
-          code: `<nav aria-label="Page navigation example">
-  <ul class="inline-flex -space-x-px text-base h-10">
-    <li>
-      <a href="#" class="flex items-center justify-center px-4 h-10 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-        <span class="sr-only">Previous</span>
-        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 1 1 5l4 4"/>
-        </svg>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-    </li>
-    <li>
-      <a href="#" aria-current="page" class="flex items-center justify-center px-4 h-10 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">2</a>
-    </li>
-    <li>
-      <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">3</a>
-    </li>
-    <li>
-      <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-        <span class="sr-only">Next</span>
-        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>
-        </svg>
-      </a>
-    </li>
-  </ul>
-</nav>`,
+          id: "pricing-1",
+          title: "Pricing Table",
+          description: "Component for displaying pricing options",
+          code: `
+                      <div class="flex justify-center">
+              
+            </div>
+          `,
+        },
+      ]
+      break
+
+    case "product-cards":
+      components = [
+        {
+          id: "product-card-1",
+          title: "Product Card",
+          description: "Card component for displaying product information",
+          code: `
+                      <div class="flex justify-center">
+              
+            </div>
+          `,
+        },
+      ]
+      break
+
+    case "side-menu":
+      components = [
+        {
+          id: "side-menu-1",
+          title: "Side Navigation Menu",
+          description: "Side menu component for website navigation",
+          code: `
+                      <div class="flex justify-center">
+              
+            </div>
+          `,
+        },
+      ]
+      break
+
+    case "stats":
+      components = [
+        {
+          id: "stats-1",
+          title: "Statistics Component",
+          description: "Component for displaying key metrics and statistics",
+          code: `
+                      <div class="flex justify-center">
+                <article class="flex items-end justify-between rounded-lg border border-gray-100 bg-white p-6">
+  <div>
+    <p class="text-sm text-gray-500">Profit</p>
+
+    <p class="text-2xl font-medium text-gray-900">$240.94</p>
+  </div>
+
+  <div class="inline-flex gap-2 rounded-sm bg-green-100 p-1 text-green-600">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="size-4"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+      />
+    </svg>
+
+    <span class="text-xs font-medium"> 67.81% </span>
+  </div>
+</article>
+
+<article class="flex items-end justify-between rounded-lg border border-gray-100 bg-white p-6">
+  <div>
+    <p class="text-sm text-gray-500">Profit</p>
+
+    <p class="text-2xl font-medium text-gray-900">$240.94</p>
+  </div>
+
+  <div class="inline-flex gap-2 rounded-sm bg-red-100 p-1 text-red-600">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="size-4"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"
+      />
+    </svg>
+
+    <span class="text-xs font-medium"> 67.81% </span>
+  </div>
+</article>
+            </div>
+          `,
         },
       ]
       break
@@ -556,89 +929,32 @@ function getComponentsByCategory(category: string) {
           id: "table-1",
           title: "Simple Table",
           description: "Basic table with headers and rows",
-          code: `<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
-                <th scope="col" class="px-6 py-3">
-                    Product name
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Color
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Category
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Price
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Action
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Apple MacBook Pro 17"
-                </th>
-                <td class="px-6 py-4">
-                    Silver
-                </td>
-                <td class="px-6 py-4">
-                    Laptop
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                </td>
-            </tr>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Microsoft Surface Pro
-                </th>
-                <td class="px-6 py-4">
-                    White
-                </td>
-                <td class="px-6 py-4">
-                    Laptop PC
-                </td>
-                <td class="px-6 py-4">
-                    $1999
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                </td>
-            </tr>
-            <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Magic Mouse 2
-                </th>
-                <td class="px-6 py-4">
-                    Black
-                </td>
-                <td class="px-6 py-4">
-                    Accessories
-                </td>
-                <td class="px-6 py-4">
-                    $99
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>`,
+          code: `
+                      <div class="flex justify-center">
+              
+            </div>
+          `,
         },
       ]
       break
 
-    // Add more cases for other component types as needed
+    case "toggles":
+      components = [
+        {
+          id: "toggle-1",
+          title: "Toggle Switch",
+          description: "Component for toggling between two states",
+          code: `
+          
+                      <div class="flex justify-center">
+              
+            </div>
+          `,
+        },
+      ]
+      break
+
     default:
-      // Keep the default components
       break
   }
 

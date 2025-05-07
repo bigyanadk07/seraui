@@ -42,7 +42,7 @@ export function MobileNav() {
       <SheetContent side="left" className="pr-0 sm:max-w-xs">
         <div className="px-7">
           <Link href="/" className="flex items-center" onClick={() => setOpen(false)}>
-            <span className="font-bold">SeraUI</span>
+            <img src="/images/Seralogo1.png" alt="SeraUI Logo" className="h-8 w-auto" />
           </Link>
         </div>
         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
