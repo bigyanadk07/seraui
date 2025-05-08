@@ -5,9 +5,10 @@ import { useRouter } from "next/navigation"
 import { Search } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogHeader, DialogTrigger } from "@/components/ui/dialog"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { categories } from "@/lib/component-data"
+import { DialogTitle } from "@radix-ui/react-dialog"
 
 export function ComponentSearch() {
   const [open, setOpen] = useState(false)
@@ -54,6 +55,7 @@ export function ComponentSearch() {
           </kbd>
         </Button>
       </DialogTrigger>
+      
       <DialogContent className="p-0">
         <div className="flex items-center border-b px-3">
           <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />

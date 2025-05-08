@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from "react"
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live"
+import { useState, useEffect } from "react"
+import { LiveProvider, LiveError, LivePreview } from "react-live"
 
 import { Check, Copy } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -10,12 +10,20 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 import { themes } from 'prism-react-renderer';
 
+// Use a simpler syntax highlighter approach
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
+
+// Register the language
+SyntaxHighlighter.registerLanguage('jsx', jsx);
+
 interface ComponentPreviewProps {
   title: string
   description: string
   code: string
-  scope?: Record<string, any> // Optional custom components/functions
-  noInline?: boolean // Add option to toggle between inline and noInline modes
+  scope?: Record<string, any>
+  noInline?: boolean
 }
 
 export function ComponentPreview({ 
@@ -23,18 +31,27 @@ export function ComponentPreview({
   description, 
   code, 
   scope = {},
-  noInline = false // Default to inline mode
+  noInline = false
 }: ComponentPreviewProps) {
   const [copied, setCopied] = useState(false)
+  const [displayCode, setDisplayCode] = useState(code)
+
+  useEffect(() => {
+    setDisplayCode(code);
+  }, [code]);
 
   const copyToClipboard = async () => {
-    await navigator.clipboard.writeText(code)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+    try {
+      await navigator.clipboard.writeText(code)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      console.error("Failed to copy code:", err)
+    }
   }
 
   return (
-    <Card>
+    <Card className="w-full overflow-hidden">
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
@@ -70,10 +87,41 @@ export function ComponentPreview({
             </LiveProvider>
           </TabsContent>
 
-          <TabsContent value="code" className="mt-4">
-            <pre className="rounded-md bg-muted p-4 overflow-x-auto text-sm">
-              <code>{code}</code>
-            </pre>
+          <TabsContent value="code" className="mt-4 relative">
+            {/* Strict containment with custom styling */}
+            <div 
+              className="rounded-md overflow-hidden"
+              style={{ 
+                maxWidth: '100%',
+                position: 'relative'
+              }}
+            >
+              {displayCode && (
+                <div 
+                  style={{ 
+                    overflow: 'auto',
+                    maxWidth: '100%'
+                  }}
+                >
+                  <pre 
+                    style={{ 
+                      margin: 0,
+                      backgroundColor: '#282c34', 
+                      color: '#abb2bf',
+                      padding: '1rem',
+                      overflowX: 'auto',
+                      fontSize: '0.875rem',
+                      lineHeight: '1.7',
+                      tabSize: 2,
+                      hyphens: 'none',
+                      whiteSpace: 'pre'
+                    }}
+                  >
+                    <code>{displayCode}</code>
+                  </pre>
+                </div>
+              )}
+            </div>
           </TabsContent>
         </Tabs>
       </CardContent>

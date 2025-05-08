@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
         <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
           <div className="text-center text-sm leading-loose text-muted-foreground md:text-left flex gap-2">
-            <p>Built by <span className="font-semibold">Bigyan Adhikari</span>.</p> 
+            <p>Product of <span className="font-semibold">Sera Corp. </span>Powered by  <span className="font-semibold">Wisdom Technologies.</span></p> 
             {/* <p>The source code is available on{" "}</p>
             <Link
               href="https://github.com/bigyanadk07/seraui"
