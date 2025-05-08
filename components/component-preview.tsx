@@ -1,24 +1,31 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live"
+
 import { Check, Copy } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
+import { themes } from 'prism-react-renderer';
+
 interface ComponentPreviewProps {
   title: string
   description: string
   code: string
+  scope?: Record<string, any> // Optional custom components/functions
+  noInline?: boolean // Add option to toggle between inline and noInline modes
 }
 
-export function ComponentPreview({ title, description, code }: ComponentPreviewProps) {
+export function ComponentPreview({ 
+  title, 
+  description, 
+  code, 
+  scope = {},
+  noInline = false // Default to inline mode
+}: ComponentPreviewProps) {
   const [copied, setCopied] = useState(false)
-  const [isMounted, setIsMounted] = useState(false)
-
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
 
   const copyToClipboard = async () => {
     await navigator.clipboard.writeText(code)
@@ -53,12 +60,19 @@ export function ComponentPreview({ title, description, code }: ComponentPreviewP
               )}
             </Button>
           </div>
-          <TabsContent value="preview" className="mt-4 rounded-md border p-6 relative">
-            {isMounted && <div className="preview-container" dangerouslySetInnerHTML={{ __html: code }} />}
+
+          <TabsContent value="preview" className="mt-4 rounded-md p-4 dark:bg-gray-900">
+            <LiveProvider code={code} theme={themes.nightOwl} scope={scope} noInline={noInline}>
+              <div className="mb-4 p-4 border rounded bg-white dark:bg-gray-800">
+                <LivePreview />
+              </div>
+              <LiveError className="text-red-500 text-sm" />
+            </LiveProvider>
           </TabsContent>
+
           <TabsContent value="code" className="mt-4">
-            <pre className="rounded-md bg-muted p-4 overflow-x-auto">
-              <code className="text-sm">{code}</code>
+            <pre className="rounded-md bg-muted p-4 overflow-x-auto text-sm">
+              <code>{code}</code>
             </pre>
           </TabsContent>
         </Tabs>

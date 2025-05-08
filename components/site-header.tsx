@@ -6,25 +6,24 @@ import { GitHubIcon } from "@/components/icons"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/mode-toggle"
 import { MobileNav } from "@/components/mobile-nav"
-import SeraLogo from '@/public/images/Seralogo1.png'
-import SeraLogo2 from '@/public/images/logo-fox.png'
+import SeraLogo2 from '@/public/images/logo-fox1.png'
 
 export function SiteHeader() {
   const pathname = usePathname()
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background">
-      <div className="container flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-50 w-full border-b bg-background " >
+      <div className="container flex h-16 items-center justify-between p-12 text-lg">
         <div className="flex items-center gap-6 md:gap-10">
           <MobileNav />
           <Link href="/" className="flex items-center space-x-2">
-            {/* <img src={SeraLogo.src} alt="SeraUI Logo" width={64} height={64} /> */}
-            <img src={SeraLogo2.src} alt="SeraUI Logo" width={128} height={256} className="py-5"/>
+            <img src={SeraLogo2.src} alt="SeraUI" width={156} height={352} className="" title="Sera UI"/>
+            
           </Link>
           <nav className="hidden gap-6 md:flex">
             <Link
               href="/"
-              className={`text-sm font-medium transition-colors hover:text-foreground/80 ${
+              className={`text-base font-medium transition-colors hover:text-foreground/80 ${
                 pathname === "/" ? "text-foreground" : "text-foreground/60"
               }`}
             >
@@ -32,7 +31,7 @@ export function SiteHeader() {
             </Link>
             <Link
               href="/components"
-              className={`text-sm font-medium transition-colors hover:text-foreground/80 ${
+              className={`text-base font-medium transition-colors hover:text-foreground/80 ${
                 pathname.startsWith("/components") ? "text-foreground" : "text-foreground/60"
               }`}
             >
@@ -40,7 +39,7 @@ export function SiteHeader() {
             </Link>
             <Link
               href="/docs"
-              className={`text-sm font-medium transition-colors hover:text-foreground/80 ${
+              className={`text-base font-medium transition-colors hover:text-foreground/80 ${
                 pathname.startsWith("/docs") ? "text-foreground" : "text-foreground/60"
               }`}
             >

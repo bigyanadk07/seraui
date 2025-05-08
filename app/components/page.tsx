@@ -13,7 +13,7 @@ export default function ComponentsPage() {
       <div className="flex flex-col items-center space-y-4 text-center">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Components</h1>
         <p className="max-w-[85%] text-lg text-muted-foreground">
-          Browse our collection of free Tailwind CSS components
+          Browse our collection of free Tailwind & CSS components
         </p>
         <div className="w-full max-w-md">
           <ComponentSearch />

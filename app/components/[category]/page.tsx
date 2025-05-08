@@ -300,7 +300,7 @@ class="size-6 text-gray-300"
       ]
       break
 
-    case "badges":
+    case "badges":  
       components = [
         {
           id: "badge-1",
@@ -343,7 +343,6 @@ d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.
 </svg>
 <p class="whitespace-nowrap text-sm">Alert</p>
 </span>
-</div>
 </div>
 `,
         },
@@ -423,6 +422,60 @@ d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
     </div>
   </article>
 </div>`,
+        },
+        {
+          id: "blog-card-2",
+          title: "Blog Card with Image",
+          description: "Card layout for blog posts preview",
+          code: 
+          `
+<article className="flex bg-white transition hover:shadow-xl">
+<div className="rotate-180 p-2 [writing-mode:_vertical-lr]">
+<time
+datetime="2022-10-10"
+className="flex items-center justify-between gap-4 text-xs font-bold text-gray-900 uppercase"
+>
+<span>2022</span>
+<span className="w-px flex-1 bg-gray-900/10"></span>
+<span>Oct 10</span>
+</time>
+</div>
+
+<div className="hidden sm:block sm:basis-56">
+<img
+alt=""
+src="https://images.unsplash.com/photo-1609557927087-f9cf8e88de18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+className="aspect-square h-full w-full object-cover"
+/>
+</div>
+
+<div className="flex flex-1 flex-col justify-between">
+<div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
+<a href="#">
+<h3 className="font-bold text-gray-900 uppercase">
+Finding the right guitar for your style - 5 tips
+</h3>
+</a>
+
+<p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus
+pariatur animi temporibus nesciunt praesentium dolore sed nulla ipsum eveniet corporis
+quidem, mollitia itaque minus soluta, voluptates neque explicabo tempora nisi culpa eius
+atque dignissimos. Molestias explicabo corporis voluptatem?
+</p>
+</div>
+
+<div className="sm:flex sm:items-end sm:justify-end">
+<a
+href="#"
+className="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold text-gray-900 uppercase transition hover:bg-yellow-400"
+>
+Read Blog
+</a>
+</div>
+</div>
+</article>
+          `,
         },
       ]
       break
@@ -698,9 +751,79 @@ d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
           title: "FAQ Component",
           description: "Frequently asked questions layout",
           code: `
-                      <div class="flex justify-center">
-              
-            </div>
+<div className="space-y-4">
+<details className="group [&_summary::-webkit-details-marker]:hidden" open>
+<summary
+className="flex items-center justify-between gap-1.5 rounded-md border border-gray-100 bg-gray-50 p-4 text-gray-900"
+>
+<h2 className="text-lg font-medium">Lorem ipsum dolor sit amet consectetur adipisicing?</h2>
+
+<svg
+className="size-5 shrink-0 transition-transform duration-300 group-open:-rotate-180"
+xmlns="http://www.w3.org/2000/svg"
+fill="none"
+viewBox="0 0 24 24"
+stroke="currentColor"
+>
+<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+</svg>
+</summary>
+
+<p className="px-4 pt-4 text-gray-900">
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias culpa in,
+recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo officiis explicabo
+consequuntur distinctio corporis earum similique!
+</p>
+</details>
+
+<details className="group [&_summary::-webkit-details-marker]:hidden">
+<summary
+className="flex items-center justify-between gap-1.5 rounded-md border border-gray-100 bg-gray-50 p-4 text-gray-900"
+>
+<h2 className="text-lg font-medium">Lorem ipsum dolor sit amet consectetur adipisicing?</h2>
+
+<svg
+className="size-5 shrink-0 transition-transform duration-300 group-open:-rotate-180"
+xmlns="http://www.w3.org/2000/svg"
+fill="none"
+viewBox="0 0 24 24"
+stroke="currentColor"
+>
+<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+</svg>
+</summary>
+
+<p className="px-4 pt-4 text-gray-900">
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias culpa in,
+recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo officiis explicabo
+consequuntur distinctio corporis earum similique!
+</p>
+</details>
+
+<details className="group [&_summary::-webkit-details-marker]:hidden">
+<summary
+className="flex items-center justify-between gap-1.5 rounded-md border border-gray-100 bg-gray-50 p-4 text-gray-900"
+>
+<h2 className="text-lg font-medium">Lorem ipsum dolor sit amet consectetur adipisicing?</h2>
+
+<svg
+className="size-5 shrink-0 transition-transform duration-300 group-open:-rotate-180"
+xmlns="http://www.w3.org/2000/svg"
+fill="none"
+viewBox="0 0 24 24"
+stroke="currentColor"
+>
+<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+</svg>
+</summary>
+
+<p className="px-4 pt-4 text-gray-900">
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias culpa in,
+recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo officiis explicabo
+consequuntur distinctio corporis earum similique!
+</p>
+</details>
+</div>
           `,
         },
       ]

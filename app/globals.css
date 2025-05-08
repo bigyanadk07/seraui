@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+@font-face{
+  font-family: "Donatto";
+  src: url('/fonts/donatto-regular.otf') format('opentype');
+}
+
+.font-donatto{
+  font-family: 'Donatto', sans-serif;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
